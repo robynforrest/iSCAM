@@ -14,7 +14,7 @@
 *.obj
 variance
 dist/
-*.BAT
+#*.BAT
 build/
 
 # iSCAM output
