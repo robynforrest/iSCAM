@@ -354,8 +354,8 @@ DATA_SECTION
 	//age at knife-edge recruitment 
 	init_ivector kage(1,n_gs); 
 	
-    //DD growth parameters :: RF (02-Apr-2013)
-    init_vector alpha_g(1,n_gs);  //growth alpha (intercept of Ford-Walford plot; derived from wk and wk-1, H&W 1992, p 334)
+        //DD growth parameters :: RF (02-Apr-2013)
+        init_vector alpha_g(1,n_gs);  //growth alpha (intercept of Ford-Walford plot; derived from wk and wk-1, H&W 1992, p 334)
 	
 	//growth rho (slope of Ford-Walford plot; H&W 1992, p 332)
 	init_vector rho_g(1,n_gs);  
@@ -6406,12 +6406,6 @@ FUNCTION void projection_model_dd(const double& tac);
 	}
 
 
-
-
-
-
-
-
 //end of projection model dd
 
 
@@ -6651,14 +6645,11 @@ FUNCTION void ddiff_msy(dvector& ftest, dvector& ye, dvector& be, double& msy, d
 			be(k) = value(-1.*((-we + se*alpha_g(1) + se*rho_g(1)*we + wk(1)*rec_a*we)/(rec_b*(-we + se*alpha_g(1) + se*rho_g(1)*we)))); //Martell
 			
 			M = value(M_dd(1)(nyr));
-			
 
 			ye(k)   = value(be(k)*(1.0-mfexp(-ftest(k)-M))*(ftest(k)/(ftest(k)+M)));
-		  	
 
 		  	if(ye(k)<0) ye(k)=0.;
 		  	if(be(k)<0) be(k)=0.;
-
 	}
 		 
 	//cout<<"ye"<<ye<<endl;
