@@ -9,13 +9,14 @@
 *.exe
 *.o
 *.so
-#*.cpp
+*.cpp
 *.htp
 *.obj
 variance
 dist/
-*.BAT
+#*.BAT
 build/
+src/main/iscam.cpp
 
 # iSCAM output
 *.psv
